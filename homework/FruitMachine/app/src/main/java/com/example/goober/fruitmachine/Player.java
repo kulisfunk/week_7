@@ -21,6 +21,9 @@ public class Player {
     public int getFunds() {
         return funds;
     }
-    
+    public void reduceFunds(){
+        this.funds -= 1;
+    }
+
 
 }

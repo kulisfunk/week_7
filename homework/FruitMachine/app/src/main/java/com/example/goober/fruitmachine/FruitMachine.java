@@ -18,6 +18,7 @@ public class FruitMachine {
     int numFruits;
     int spinIndex;
     Boolean isWin = false;
+    int winValue = 0;
 
     public FruitMachine(String name, int numOfReels, int funds) {
         this.name = name;
@@ -126,13 +127,17 @@ public class FruitMachine {
 
     public String result(ArrayList<Symbols> spins){
         if (isWin == true) {
+            winValue = spins.get(0).getValue();
 
-            return "Congratulations you got " + spins.size() + " " + spins.get(0).toString() + " with a win of " + spins.get(0).getValue();
+            return "Congratulations you got " + spins.size() + " " + spins.get(0).getName() + " with a win of " + spins.get(0).getValue();
         }else{
              if (numOfReels == 3) {
-                 return spins.get(0) + " " + spins.get(1) + " " + spins.get(2) + " No win this time, sorry";}
+                 winValue = 0;
+                 return spins.get(0) + " " + spins.get(1) + " " + spins.get(2) + " No win this time, sorry.";
+             }
 
              }
+             winValue = 0;
              return spins.get(0) + " " + spins.get(1) + " " + spins.get(2) + " " + spins.get(3) + " " + spins.get(4) + " No win this time, sorry";
     }
 

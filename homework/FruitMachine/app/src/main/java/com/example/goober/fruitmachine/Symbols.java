@@ -7,26 +7,32 @@ import static android.R.attr.value;
  */
 
 public enum Symbols {
-    CHERRY(2),
-    LEMON(4),
-    PLUM(8),
-    STRAWBERRY(10),
-    GRAPE(20),
-    MELON(25),
-    BELL(30),
-    BAR(40),
-    DOUBLEBAR(50),
-    TRIPLEBAR(70),
-    SEVEN(100);
+    CHERRY(2, "CHERRIES"),
+    LEMON(4, "LEMONS"),
+    PLUM(8, "PLUMS"),
+    STRAWBERRY(10, "STRAWBERRIES"),
+    GRAPE(20, "GRAPES"),
+    MELON(25, "MELONS"),
+    BELL(30, "BELLS"),
+    BAR(40, "BARS"),
+    DOUBLEBAR(50, "DOUBLEBARS"),
+    TRIPLEBAR(70, "TRIPLeBARS"),
+    SEVEN(100, "SEVENS");
 
     public int value;
+    public String name;
 
-    Symbols(int value) {
+    Symbols(int value, String name) {
         this.value = value;
+        this.name = name;
     }
 
     public int getValue() {
         return value;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
